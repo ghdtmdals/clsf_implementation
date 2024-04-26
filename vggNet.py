@@ -56,6 +56,7 @@ class VGG(nn.Module):
         return block
     
     def getConfigs(self, model: str = 'A'):
+        ### Layer 순서에 맞춰 feature 수 지정, 'm'은 Maxpool Layer, 'c-n'은 1x1 Convolution 
         configs = {
             'A': [64, 'm', 128, 'm', 256, 256, 'm', 512, 512, 'm', 512, 512],
             'B': [64, 64, 'm', 128, 128, 'm', 256, 256, 'm', 512, 512, 'm', 512, 512, 'm'],
